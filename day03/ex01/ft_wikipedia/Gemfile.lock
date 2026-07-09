@@ -1,0 +1,37 @@
+PATH
+  remote: .
+  specs:
+    ft_wikipedia (0.1.0)
+      nokogiri
+      open-uri
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    date (3.3.3)
+    mini_portile2 (2.8.5)
+    minitest (5.16.3)
+    nokogiri (1.16.2)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    open-uri (0.3.0)
+      stringio
+      time
+      uri
+    racc (1.6.2)
+    rake (13.0.6)
+    stringio (3.0.4)
+    time (0.2.2)
+      date
+    uri (0.12.2)
+
+PLATFORMS
+  x86_64-linux-gnu
+
+DEPENDENCIES
+  ft_wikipedia!
+  minitest (~> 5.0)
+  rake (~> 13.0)
+
+BUNDLED WITH
+   2.4.20
