@@ -1,0 +1,16 @@
+<h1>Log Book</h1>
+
+<form action="<%= log_book_write_path %>" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <textarea name="entry_text" placeholder="Écris ici..." required></textarea>
+
+
+  <button type="submit">Write</button>
+</form>
+
+<% @entries.each do |entry| %>
+  <div>
+    <%= entry %>
+  </div>
+<% end %>

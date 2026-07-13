@@ -1,0 +1,502 @@
+<section class="section">
+  <table id="quick-search-table" class="table table-striped">
+    <!-- EN-TÊTES : une seule ligne -->
+    <thead>
+      <tr>
+        <th>Catégorie</th>
+        <th>Concept</th>
+        <th>Usage</th>
+        <th>Exemple</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Save file</td>
+        <td><strong>Ctrl + S</strong></td>
+        <td>-</td>
+        <td>Saves the currently open file</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Undo</td>
+        <td><strong>Ctrl + Z</strong></td>
+        <td>-</td>
+        <td>Undo the last change you made to the current file</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Redo</td>
+        <td><strong>Ctrl + Y</strong></td>
+        <td>-</td>
+        <td>Redo what you just undid with undo</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Find in File</td>
+        <td><strong>Ctrl + F</strong></td>
+        <td>-</td>
+        <td>Search for a character sequence within the current file</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Find in all Files</td>
+        <td><strong>Ctrl + Shift + F</strong></td>
+        <td>-</td>
+        <td>Search for a character sequence in all files of the project</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Replace</td>
+        <td><strong>Ctrl + H</strong></td>
+        <td>-</td>
+        <td>Replace occurrences of character sequences</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Copy</td>
+        <td><strong>Ctrl + C</strong></td>
+        <td>-</td>
+        <td>Copy the currently highlighted text into the clipboard</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Cut</td>
+        <td><strong>Ctrl + X</strong></td>
+        <td>-</td>
+        <td>Copy the highlighted text into the clipboard but delete it</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Paste</td>
+        <td><strong>Ctrl + V</strong></td>
+        <td>-</td>
+        <td>Insert whatever currently is in the clipboard</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>New File</td>
+        <td><strong>Ctrl + N</strong></td>
+        <td>-</td>
+        <td>Create a new empty file</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Search and open file</td>
+        <td><strong>Ctrl + P</strong></td>
+        <td>-</td>
+        <td>Search for a file giving part of its name (fuzzy search)</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-info">Editor</span></td>
+        <td>Comment</td>
+        <td><strong>Ctrl + /</strong></td>
+        <td>-</td>
+        <td>Marks the selected text as a comment</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>Change directory</td>
+        <td><code>cd directory</code></td>
+        <td><code>cd my_app</code></td>
+        <td>Changes the directory to the specified directory</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>List contents directory</td>
+        <td><code>ls directory</code></td>
+        <td><code>ls my_app</code></td>
+        <td>Shows all contents of the directory</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>Directory you are currently in</td>
+        <td><code>pwd</code></td>
+        <td><code>pwd</code></td>
+        <td>Shows the full path of the directory you are currently in</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>Create a new directory</td>
+        <td><code>mkdir name</code></td>
+        <td><code>mkdir rails</code></td>
+        <td>Creates a directory with the given name</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>Delete a file</td>
+        <td><code>rm file</code></td>
+        <td><code>rm foo</code></td>
+        <td>Deletes the specified file</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>Delete a directory</td>
+        <td><code>rm -r folder</code></td>
+        <td><code>rm -r old_application</code></td>
+        <td>Deletes the specified folder and all of its contents</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>Starting a program</td>
+        <td><code>program arguments</code></td>
+        <td><code>firefox</code></td>
+        <td>Starts the program with the given name and arbitrary arguments</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-warning text-dark">Console</span></td>
+        <td>Abort the program</td>
+        <td><code>Ctrl + C</code></td>
+        <td>-</td>
+        <td>This will abort the program currently running in the terminal</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Output tag</td>
+        <td><code>&lt;%= %&gt;</code></td>
+        <td><code>&lt;%= @product.price %&gt;</code></td>
+        <td>Runs Ruby code and inserts the result to HTML</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Execution tag</td>
+        <td><code>&lt;% %&gt;</code></td>
+        <td><code>&lt;% if user.admin? %&gt;</code></td>
+        <td>Runs Ruby code but the result will not be inserted</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Create</td>
+        <td><code>[contents]</code></td>
+        <td><code>["Rails", "fun", 5]</code></td>
+        <td>Creates an Array, empty or with specified contents</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Number of elements</td>
+        <td><code>array.size</code></td>
+        <td><code>[1, 2, 3].size # => 3</code></td>
+        <td>Returns the number of elements in an Array</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Access</td>
+        <td><code>array[position]</code></td>
+        <td><code>array[0] # => "hi"</code></td>
+        <td>Access an individual element by position (starts at 0)</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Adding an element</td>
+        <td><code>array << element</code></td>
+        <td><code>array << 4</code></td>
+        <td>Adds element to the end of the array</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Assigning</td>
+        <td><code>array[number] = value</code></td>
+        <td><code>array[2] = "new"</code></td>
+        <td>Set a new value at a specific index</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Delete at index</td>
+        <td><code>array.delete_at(i)</code></td>
+        <td><code>array.delete_at(2)</code></td>
+        <td>Delete element at specified index</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Iterating</td>
+        <td><code>array.each do |e| .. end</code></td>
+        <td><code>persons.each do |p| puts p.name end</code></td>
+        <td>Do something for each element of the array</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Create a new app</td>
+        <td><code>rails new name</code></td>
+        <td>-</td>
+        <td>Create a new Ruby on Rails application</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Start the server</td>
+        <td><code>rails server</code></td>
+        <td>-</td>
+        <td>Start server to respond to requests (localhost:3000)</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Scaffolding</td>
+        <td><code>rails generate scaffold</code></td>
+        <td><code>rails generate scaffold product name:string</code></td>
+        <td>Generate controllers, models and views automatically</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Run migrations</td>
+        <td><code>rake db:migrate</code></td>
+        <td>-</td>
+        <td>Apply migrations to your database</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Install dependencies</td>
+        <td><code>bundle install</code></td>
+        <td>-</td>
+        <td>Install gems from Gemfile</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Check dependencies</td>
+        <td><code>bundle check</code></td>
+        <td>-</td>
+        <td>Check if Gemfile dependencies are satisfied</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Show existing routes</td>
+        <td><code>rake routes</code></td>
+        <td>-</td>
+        <td>Show complete list of available routes</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Normal Number</td>
+        <td><code>number_of_your_choice</code></td>
+        <td><code>42</code></td>
+        <td>Numbers are natural for Ruby</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Decimals</td>
+        <td><code>main.decimal</code></td>
+        <td><code>3.2</code></td>
+        <td>Achieve decimal numbers by adding a point</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Basic Math</td>
+        <td><code>n operator m</code></td>
+        <td><code>2 + 3 # => 5</code></td>
+        <td>Use basic math operations</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Comparison</td>
+        <td><code>n operator m</code></td>
+        <td><code>12 > 3 # => true</code></td>
+        <td>Compare if one number is bigger or smaller</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>app</td>
+        <td>-</td>
+        <td>-</td>
+        <td>The most important folder, contains your application</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>app/assets</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Contains images, javascripts and stylesheets</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>app/controllers</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Contains controllers handling requests from users</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>app/helpers</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Helpers for logic needed in views</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>app/models</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Classes that model business logic</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>app/views</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Display templates (.html.erb files)</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>config</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Configuration files and routes.rb</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>db</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Database files and migrations</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-primary">Rails</span></td>
+        <td>Gemfile</td>
+        <td>-</td>
+        <td><code>gem gem_name</code></td>
+        <td>Specifies gems required to run your application</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Comment</td>
+        <td><code># Comment text</code></td>
+        <td><code># This is a comment</code></td>
+        <td>Ruby ignores everything marked as a comment</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Variables</td>
+        <td><code>variable = some_value</code></td>
+        <td><code>name = "Tobi"</code></td>
+        <td>Refer to a value by the name you gave it</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Console output</td>
+        <td><code>puts something</code></td>
+        <td><code>puts "Hello World"</code></td>
+        <td>Print its argument to the console</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Call a method</td>
+        <td><code>object.method(arguments)</code></td>
+        <td><code>string.length</code></td>
+        <td>Ask an object to do something or give information</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Define a method</td>
+        <td><code>def name(parameter) end</code></td>
+        <td><code>def greet(name) puts "Hi" end</code></td>
+        <td>Reusable units of behaviour</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Equality</td>
+        <td><code>object == other</code></td>
+        <td><code>3 == 4 # => false</code></td>
+        <td>Check if two things are the same</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Inequality</td>
+        <td><code>object != other</code></td>
+        <td><code>3 != 4 # => true</code></td>
+        <td>Inverse of equality</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Decisions with if</td>
+        <td><code>if condition ... else ... end</code></td>
+        <td><code>if input == password grant_access end</code></td>
+        <td>Decide what to do based upon a condition</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Constants</td>
+        <td><code>CONSTANT = some_value</code></td>
+        <td><code>PI = 3.1415926535</code></td>
+        <td>Variables in UPCASE with values that never change</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Creating</td>
+        <td><code>{key => value}</code></td>
+        <td><code>{42 => "answer", :name => "Tobi"}</code></td>
+        <td>Create hash with key-value pairs in curly braces</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Accessing</td>
+        <td><code>hash[key]</code></td>
+        <td><code>hash[:key] # => "value"</code></td>
+        <td>Access entry in hash with key (like array)</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Assigning</td>
+        <td><code>hash[key] = value</code></td>
+        <td><code>hash[:key] = "value"</code></td>
+        <td>Add or modify a key-value pair</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Deleting</td>
+        <td><code>hash.delete(key)</code></td>
+        <td><code>hash.delete(:a)</code></td>
+        <td>Delete specified key from the hash</td>
+      </tr>
+
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Create</td>
+        <td><code>'A string'</code></td>
+        <td><code>'Hello World'</code></td>
+        <td>String created by putting quotes around text</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Interpolation</td>
+        <td><code>"A string and #{expression}"</code></td>
+        <td><code>"Email: #{user.email}"</code></td>
+        <td>Combine string with variable using double quotes</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Length</td>
+        <td><code>string.length</code></td>
+        <td><code>"Hello".length # => 5</code></td>
+        <td>Get number of characters in string</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Concatenate</td>
+        <td><code>string + string2</code></td>
+        <td><code>"Hello " + "reader"</code></td>
+        <td>Concatenate two or more strings together</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Substitute</td>
+        <td><code>string.gsub(a_string, substitute)</code></td>
+        <td><code>"Hae".gsub("ae", "ä")</code></td>
+        <td>Globally substitute replaces all occurrences</td>
+      </tr>
+      <tr>
+        <td><span class="badge bg-danger">Ruby</span></td>
+        <td>Access</td>
+        <td><code>string[position]</code></td>
+        <td><code>"Hello"[1] # => "e"</code></td>
+        <td>Access character at given position (starts at 0)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,442 @@
+  <h2 id="ruby-hashes">Hashes</h2>
+
+    <p>
+    Hashes associate a <em>key</em>  to some <em>value</em>. You may then retrieve the value based upon its key.
+    This construct is called a <em>dictionary</em> in other languages, which is appropriate
+    because you use the key to "look up" a value, as you would look up a definition for
+    a word in a dictionary. Each key must be unique for a given hash but values can be repeated.
+    </p>
+
+    <p>
+    Hashes can map from anything to anything! You can map from Strings to
+    Numbers, Strings to Strings, Numbers to Booleans... and you can mix
+    all of those! Although it is common that at least all the keys are of
+    the same class. <em>Symbols</em> are especially common as keys. Symbols
+    look like this: <code>:symbol</code>. A symbol is a colon followed by some
+    characters. You can think of them as special strings that stand for
+    (symbolize) something! We often use symbols because
+    Ruby runs faster when we use symbols instead of strings.
+    </p>
+
+    <p>Learn more about hashes at
+    <a href="http://www.ruby-doc.org/core-2.0/Hash.html">ruby-doc</a>.
+    </p>
+
+    <table class="table table-striped">
+    <tr>
+        <th class="concept">Concept</th>
+        <th class="usage">Usage</th>
+        <th class="hash-example">Examples</th>
+        <th class="description">Description</th>
+    </tr>
+    <tr>
+        <td>Creating</td>
+        <td><code>
+        <strong>{</strong>key <strong>=></strong> value<strong>}</strong>
+        </code></td>
+        <td>
+        <p><code>
+            <strong>{</strong>:hobby <strong>=></strong>
+            "programming"<strong>}</strong>
+        </code></p>
+    <pre><code><strong>{</strong>42 <strong>=></strong> "answer", "score" <strong>=></strong> 100,
+    :name <strong>=></strong> "Tobi"<strong>}</strong>
+    </code></pre>
+        </td>
+        <td>
+        You create a hash by surrounding the key-value pairs with curly
+        braces. The arrow always goes from the <em>key</em> to the
+        <em>value</em> depicting the meaning: <em>"This key points to this
+        value."</em>. Key-value pairs are then separated by commas.
+        </td>
+    </tr>
+    <tr>
+        <td>Accessing</td>
+        <td><code>hash<strong>[</strong>key<strong>]</strong></code></td>
+        <td>
+    <pre><code>hash = {:key => "value"}
+    hash<strong>[</strong>:key<strong>]</strong> # => "value"
+    hash<strong>[</strong>foo<strong>]</strong> # => nil
+    </code></pre>
+        </td>
+        <td>
+        Accessing an entry in a hash looks a lot like accessing it in
+        an <em>array</em>. However with a hash the key can be anything, not
+        just numbers. If you try to access a key that does not exist, the
+        value <code>nil</code> is returned, which is Ruby's way of saying
+        "nothing", because if it doesn't recognize the key it can't return
+        a value for it.
+        </td>
+    </tr>
+    <tr>
+        <td>Assigning</td>
+        <td>
+        <code>hash<strong>[</strong>key<strong>] =</strong> value</code>
+        </td>
+        <td>
+    <pre><code>hash = {:a => "b"}
+    hash<strong>[</strong>:key<strong>] =</strong> "value"
+    hash # => {:a=>"b", :key=>"value"}
+    </code></pre>
+        </td>
+        <td>
+        Assigning values to a hash is similar to assigning values to an
+        array. With a hash, the key can
+        be a number or it can be a symbol, string,
+        number... or anything, really!
+        </td>
+    </tr>
+    <tr>
+        <td>Deleting</td>
+        <td><code>hash<strong>.delete</strong><em>(key)</em></code></td>
+        <td>
+    <pre><code>hash = {:a => "b", :b => 10}
+    hash<strong>.delete</strong><em>(:a)</em>
+    hash # => {:b=>10}
+    </code></pre>
+        </td>
+        <td>
+        You can delete a specified key from the hash, so that the key and its
+        value can not be accessed.
+        </td>
+    </tr>
+    </table>
+
+    <h1 id="rails">Rails Basics</h1>
+
+    <p>This is an introduction to the basics of Rails. We look at the general
+    structure of a Rails application and the important commands used in the terminal.
+    </p>
+
+    <p>
+    If you do not have Rails installed yet, there is a
+    <a href="http://railsapps.github.io/installing-rails.html">
+        well maintained guide by Daniel Kehoe
+    </a> on how to install Rails on different platforms.
+    </p>
+
+    <h2 id="rails-folder-structure">The Structure of a Rails app</h2>
+    Here is an overview of all the folders of a new Rails application, outlining
+    the purpose of each folder, and describing the most important files.
+    <table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>app</td>
+        <td>This folder contains your application. Therefore it is the
+        <strong>most important folder</strong> in Ruby on Rails and it is
+        worth digging into its subfolders. See the following rows.
+        </td>
+    </tr>
+     <h2 id="rails-folder-structure">The Structure of a Rails app</h2>
+    Here is an overview of all the folders of a new Rails application, outlining
+    the purpose of each folder, and describing the most important files.
+    <table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>app</td>
+        <td>This folder contains your application. Therefore it is the
+        <strong>most important folder</strong> in Ruby on Rails and it is
+        worth digging into its subfolders. See the following rows.
+        </td>
+    </tr>
+    <tr>
+        <td>app/assets</td>
+        <td>Assets basically are your front-end stuff. This folder contains
+        <em>images</em> you use on your website, <em>javascripts</em> for
+        all your fancy front-end interaction and <em>stylesheets</em> for
+        all your CSS making your website absolutely beautiful.
+        </td>
+    </tr>
+    <tr>
+        <td>app/controllers</td>
+        <td>The controllers subdirectory contains the controllers, which
+        handle the requests from
+        the users. It is often responsible for a single resource type,
+        such as places, users or attendees. Controllers also tie together
+        the <em>models</em> and the <em>views</em>.
+        </td>
+    </tr>
+    <tr>
+        <td>app/helpers</td>
+        <td>Helpers are used to take care of logic that is needed in the views
+        in order to keep the views clean of logic and reuse that logic in
+        multiple views.
+        </td>
+    </tr>
+    <tr>
+        <td>app/mailers</td>
+        <td>Functionality to send emails goes here.</td>
+    </tr>
+    <tr>
+        <td>app/models</td>
+        <td>The models subdirectory holds the classes that model the business
+        logic of our application. It is concerned with the things our
+        application is about. Often this is data, that is also saved in the
+        database. Examples here are a Person, or a Place class with all
+        their typical behaviour.
+        </td>
+    </tr>
+    <tr>
+        <td>app/views</td>
+        <td>
+        <p>The views subdirectory contains the display templates that will
+            be displayed to the user after a successful request.
+            By default they are written in HTML with embedded ruby
+            (.html.erb). The embedded ruby is used to insert data from the
+            application. It is then converted to HTML and sent to the browser
+            of the user. It has subdirectories for every resource of our
+            application, e.g. places, persons. These subdirectories contain the
+            associated view files.</p>
+
+        <p>Files starting with an underscore (<em>_</em>) are called
+            <em>partials</em>. Those are parts of a view which are reused in
+            other views. A common example is <em>_form.html.erb</em> which
+            contains the basic form for a given resource. It is used in the
+            <em>new</em> and in the <em>edit</em> view since creating
+            something
+            and editing something looks pretty similar.
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td>config</td>
+        <td>This directory contains the configuration files that your
+        application will need, including your database configuration (in
+        <em>database.yml</em>) and the particularly important
+        <em>routes.rb</em> which decides how web requests are handled.
+        The <em>routes.rb</em> file matches a given URL with the
+        <em>controller</em> which will handle the request.
+        </td>
+    </tr>
+    <tr>
+        <td>db</td>
+        <td>Contains a lot of <em>database</em> related files.
+        Most importantly the <em>migrations</em> subdirectory, containing
+        all your database migration files. Migrations set up your
+        database structure, including the attributes of your models. With migrations
+        you can add new attributes to existing models or create new models.
+        So you could add the <em>favorite_color</em> attribute to your
+        Person model so everyone can specify their favorite color.
+        </td>
+    </tr>
+    <tr>
+        <td>doc</td>
+        <td>Contains the documentation you create for your application. Not
+        too important when starting out.
+        </td>
+    </tr>
+    <tr>
+        <td>lib</td>
+        <td>Short for library. Contains code you've developed that is used in
+        your application and may be used elsewhere. For example, this
+        might be code used to get specific information from Facebook.
+        </td>
+    </tr>
+    <tr>
+        <td>log</td>
+        <td>See all the funny stuff that is written in the console where you
+        started the Rails server? It is written to your
+        <em>development.log</em>. Logs contain runtime information
+        of your application. If an error happens, it will be recorded
+        here.
+        </td>
+    </tr>
+    <tr>
+        <td>public</td>
+        <td>Contains static files that do not contain Ruby code, such as error pages.</td>
+    </tr>
+    <tr>
+        <td>script</td>
+        <td>By default contains what is executed when you type in the
+        <em>rails</em> command. Seldom of importance to beginners.
+        </td>
+    </tr>
+    <tr>
+        <td>test</td>
+        <td>Contains the tests for your application. With tests you make sure
+        that your application actually does what you think it does. This
+        directory might also be called <em>spec</em>, if you are using the
+        RSpec gem (an alternative testing framework).
+        </td>
+    </tr>
+    <tr>
+        <td>vendor</td>
+        <td>A folder for software code provided by others ("libraries"). Most
+        often, libraries are provided as <em>ruby gems</em> and
+        installed using the <em>Gemfile</em>. If code is not available as
+        a ruby gem then you should put it here. This might be the case for
+        jQuery plugins. Probably won't be used that often in the beginning.
+        </td>
+    </tr>
+    <tr>
+        <td>Gemfile</td>
+        <td><p>A file that specifies a list of gems that are required to run
+        your application. Rails itself is a gem you will find listed in the
+        Gemfile. Ruby gems are self-contained packages of code, more generally
+        called libraries, that add functionality or features to your application.
+        </p>
+
+        <p>If you want to add a new gem to your application,
+            add "<strong>gem</strong> <em>gem_name</em>" to your Gemfile,
+            optionally specifying a version number. Save the file and then run
+            <em>bundle install</em> to install the gem.
+        </p>
+        </td>
+    </tr>
+    <tr>
+        <td>Gemfile.lock</td>
+        <td>This file specifies the exact versions of all gems you use. Because some
+        gems depend on other gems, Ruby will install all you need
+        automatically. The file also contains specific version numbers.
+        It can be used to make sure that everyone within a team is working
+        with the same versions of gems. The file is auto-generated.
+        <em>Do not edit this file.</em></td>
+    </tr>
+    </table>
+
+    <h2 id="rails-commands">Important Rails commands</h2>
+
+    <p>
+    Here is a summary of important commands that can be used as you develop
+    your Ruby on Rails app. You must be in the root directory of your project
+    to run any of these commands (with the exception of the <em>rails new</em>
+    command). The project or application root directory is the folder containing
+    all the subfolders described above (app, config, etc.).
+    </p>
+
+    <table class="table table-striped">
+    <tr>
+        <th>Concept</th>
+        <th>Usage</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Create a new app</td>
+        <td><code><strong>rails new</strong> <em>name</em></code></td>
+        <td>Create a new Ruby on Rails application with the given name here.
+        This will give you the basic structure to immediately get started.
+        After this command has successfully run your application is in a
+        folder with the same name you gave the application. You have to
+        <em>cd</em> into that folder.
+        </td>
+    </tr>
+    <tr>
+        <td>Start the server</td>
+        <td><code><strong>rails server</strong></code></td>
+        <td>
+        <p>You have to start the server in order for your application to
+            respond to your requests. Starting the server might take some time.
+            When it is done, you can access your application under
+            <a href="localhost:3000">localhost:3000</a> in the browser of your
+            choice.</p>
+
+        <p>In order to stop the server, go to the console where it is
+            running and press <strong>Ctrl + C</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td>Scaffolding</td>
+        <td>
+        <code><strong>rails generate scaffold</strong>
+            <em>name attribute:type</em></code>
+        </td>
+        <td>
+        <p>
+            The scaffold command magically generates all the common things needed
+            for a new resource for you! This includes <em>controllers, models and views</em>. It
+            also creates the following basic actions: create a new resource,
+            edit a resource, show a resource, and delete a resource.
+        </p>
+
+        <p>That's all the basics you need. Take this example:</p>
+
+        <p><code><strong>rails generate scaffold</strong> <em>product
+            name:string price:integer</em></code></p>
+
+        <p>Now you can create new products, edit them, view them and delete
+            them if you don't need them anymore. Nothing stops you from
+            creating a full fledged web shop now ;-)</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Run migrations</td>
+        <td><code><strong>rake db:migrate</strong></code></td>
+        <td>When you add a new migration, for example by creating
+        a new <em>scaffold</em>, the migration has to be applied to your database.
+        The command is used to update your database.
+        </td>
+    </tr>
+    <tr>
+        <td>Install dependencies</td>
+        <td><code><strong>bundle install</strong></code></td>
+        <td>If you just added a new gem to your Gemfile you should run bundle
+        install to install it. Don't forget to restart your server
+        afterwards!
+        </td>
+    </tr>
+    <tr>
+        <td>Check dependencies</td>
+        <td><code><strong>bundle check</strong></code></td>
+        <td>Checks if the dependencies listed in Gemfile are satisfied by currently installed gems
+        </td>
+    </tr> 
+    <tr>
+        <td>Show existing routes</td>
+        <td><code><strong>rake routes</strong></code></td>
+        <td>Shows complete list of available routes in your application.</td>
+    </tr>
+    </table>
+
+    <h2 id="rails-erb">ERB: Embedded Ruby</h2>
+    <p>
+    In your views (that is, under <code>app/views</code> in your Rails app) you
+    will find <code>.html.<strong>erb</strong></code> files. <strong>ERB</strong>
+    stands for <strong>E</strong>mbedded <strong>R</strong>u<strong>B</strong>y.
+    This just means that Rails processes some special tags in those files and
+    produces HTML output to send back to the user.
+    </p>
+    <p>
+    There are two ERB tags that you need to remember:
+    <code>&lt;%= <i>ruby_code</i> %&gt;</code> and
+    <code>&lt;% <i>ruby_code</i> %&gt;</code>. Notice that the difference is the
+    <strong>=</strong> in the first tag.
+    </p>
+
+    <table class="table table-striped">
+    <tr>
+        <th class="usage">Tag</th>
+        <th class="erb-example">Examples</th>
+        <th class="description">Description</th>
+    </tr>
+    <tr>
+        <td><code>&lt;%<strong>=</strong> %&gt;</code></td>
+        <td><code><strong>&lt;%= @product.price %&gt;</strong></code></td>
+        <td>
+        It runs the Ruby code and inserts the result to the HTML at that position.
+        You can put <em>any kind of Ruby code</em> between <code>&lt;%=</code> and
+        <code>%&gt;</code>, for instance, <code>&lt;%= 9 * 3 %&gt;</code> will translate to
+        <strong>27</strong> in the page that the user is viewing. However,
+        typically this tag is used to display some data from a model, such as the
+        price of a product, as shown in the example here.
+        </td>
+    </tr>
+    <tr>
+        <td><code>&lt;% %&gt;</code></td>
+        <td>
+    <pre><code><strong>&lt;% if user.admin? %&gt;</strong>
+    &lt;p&gt;Hello Admin!&lt;/p&gt;
+    &lt;% end %&gt;</code></pre></td>
+        <td>
+        The Ruby code between the delimiters <code>&lt;%</code> and <code>%&gt;</code>
+        is run but the result will <strong>not</strong> be inserted at this point
+        in the HTML. Therefore these tags are most commonly used for control flow
+        structures such as an if statement in the example, or loops.
+        </td>
+    </tr>
+    </table>
