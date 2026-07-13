@@ -8,7 +8,7 @@ class TestFtWikipedia < Minitest::Test
   end
 
   def test_working_well
-    assert_equal(20, FtWikipedia::Ft_wikipedia.search("Kiss"))
+    assert_equal(9, FtWikipedia::Ft_wikipedia.search("Kiss"))
   end
 
   def test_loop

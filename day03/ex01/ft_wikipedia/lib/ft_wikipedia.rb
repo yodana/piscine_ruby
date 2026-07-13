@@ -34,8 +34,8 @@ module FtWikipedia
         doc = Nokogiri::HTML(html)
         links = doc.css('div.mw-content-ltr p a')
         links.each do |link|
-            if link['href'].start_with?('/wiki/') and link['href'].include?(":") == false
-                word = link['href'].gsub('/wiki/', '')
+            if link['href'].include?(":") == false
+                word = link['href'].gsub('//en.wikipedia.org/wiki/', '')
                 return word
             end
         end
