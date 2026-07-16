@@ -1,0 +1,20 @@
+one:
+  name: alice
+  email: bob@example.com
+  since: 2020
+  admin: false
+  country: France
+
+two:
+  name: bob
+  email: bob2@example.com
+  since: 2021
+  admin: true
+  country: France
+
+three:
+  name: bob2
+  email: alice@example.com
+  since: 2022
+  admin: false
+  country: USA
